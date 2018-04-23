@@ -61,15 +61,14 @@ describe('class', () => {
     // create a static method create that encapsulates calling constructor
     //   and storing the reference (in instances array) and returns the instance
     class Musician {
-      instrument;
-      static instances = [];
-      constructor(instrument = 'guitar') {
-        this.instrument = instrument;
+      static instances: Musician[] = []
+      constructor(public instrument: string) {
       }
-      static create(params?) {
-        Musician.instances.push(Musician.instances);
+      static create(instrument?) {
+        let musician = new Musician(instrument);
+        Musician.instances.push(musician);
+        return musician;
       }
-
     }
 
     expect(Musician.create).toBeDefined()
