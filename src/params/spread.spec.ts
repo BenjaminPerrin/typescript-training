@@ -2,13 +2,13 @@ describe('spread parameters', () => {
 
   it('should be able to call a function and spread the arguments', () => {
     const args = ['a', 'b', 'c']
-    let calls = 1
-
+    let calls = 0
+    myFunction(...args);
     expect(calls).toBe(1)
 
     // In order to use spread with typescript, need to overload function/method signature
     // uncomment the line below - and/or ask the trainer what's going on here, if in doubt ;)
-    function myFunction(...args: string[]);
+
     function myFunction(a, b, c) {
       expect(a).toBe('a')
       expect(b).toBe('b')
