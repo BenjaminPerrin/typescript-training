@@ -16,6 +16,6 @@
     "src/lib.ext.ts",
     "src/matchers.ts",
     "src/fake.spec.ts",
-    "src/main/*.ts"
+    "src/datatypes/*.ts"
   ]
 }
